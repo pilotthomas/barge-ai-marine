@@ -1,0 +1,72 @@
+{
+  "name": "Terminal",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Terminal or facility name"
+    },
+    "location": {
+      "type": "string",
+      "description": "Physical location/address"
+    },
+    "market": {
+      "type": "string",
+      "enum": [
+        "Long Beach",
+        "Oakland",
+        "Portland",
+        "Seattle"
+      ],
+      "description": "Operating market for this terminal"
+    },
+    "terminal_type": {
+      "type": "string",
+      "enum": [
+        "Marine Terminal",
+        "Refinery",
+        "Storage Facility",
+        "Distribution Center",
+        "Other"
+      ],
+      "default": "Marine Terminal",
+      "description": "Type of terminal facility"
+    },
+    "suppliers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of suppliers available at this terminal (e.g., Chevron, Neste, Shell)"
+    },
+    "contact_name": {
+      "type": "string",
+      "description": "Primary contact person"
+    },
+    "contact_phone": {
+      "type": "string",
+      "description": "Contact phone number"
+    },
+    "contact_email": {
+      "type": "string",
+      "description": "Contact email address"
+    },
+    "operating_hours": {
+      "type": "string",
+      "description": "Normal operating hours"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the terminal"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether this terminal is currently active"
+    }
+  },
+  "required": [
+    "name",
+    "market"
+  ]
+}

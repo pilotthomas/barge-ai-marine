@@ -1,0 +1,170 @@
+{
+  "name": "SalesOrder",
+  "type": "object",
+  "properties": {
+    "market": {
+      "type": "string",
+      "enum": [
+        "Long Beach",
+        "Oakland",
+        "Portland",
+        "Seattle",
+        "Wood River",
+        "St. Louis",
+        "Wickliffe",
+        "Memphis",
+        "Baton Rouge",
+        "Mobile"
+      ],
+      "description": "Operating market for this order"
+    },
+    "customer_name": {
+      "type": "string",
+      "description": "Customer name"
+    },
+    "customer_po": {
+      "type": "string",
+      "description": "Customer's purchase order number"
+    },
+    "vessel_name": {
+      "type": "string",
+      "description": "Customer's vessel name"
+    },
+    "broker_name": {
+      "type": "string",
+      "description": "Broker name"
+    },
+    "broker_commission": {
+      "type": "number",
+      "description": "Broker commission percentage or amount"
+    },
+    "agent_name": {
+      "type": "string",
+      "description": "Agent name"
+    },
+    "method_of_delivery": {
+      "type": "string",
+      "enum": [
+        "Barge",
+        "Truck",
+        "X-Pipe"
+      ],
+      "description": "Method of delivery"
+    },
+    "destination": {
+      "type": "string",
+      "description": "Delivery destination/location"
+    },
+    "product_lines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_type": {
+            "type": "string"
+          },
+          "requested_gallons": {
+            "type": "number"
+          },
+          "requested_metric_tons": {
+            "type": "number"
+          },
+          "metric_tons_per_gallon_conversion": {
+            "type": "number"
+          },
+          "price_per_gallon": {
+            "type": "number"
+          },
+          "price_per_metric_ton": {
+            "type": "number"
+          },
+          "pricing_timing": {
+            "type": "string",
+            "enum": [
+              "Day of Delivery",
+              "Day of Loading",
+              "On Invoice Price"
+            ]
+          }
+        }
+      },
+      "description": "Up to 3 product line items"
+    },
+    "barge_charge": {
+      "type": "number",
+      "description": "Optional barge charge (flat fee)"
+    },
+    "requested_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Requested delivery date"
+    },
+    "requested_time": {
+      "type": "string",
+      "description": "Requested delivery time in 24-hour format"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "normal",
+        "urgent"
+      ],
+      "default": "normal"
+    },
+    "is_hedged": {
+      "type": "boolean",
+      "default": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "dispatched",
+        "cancelled",
+        "archived"
+      ],
+      "default": "pending"
+    },
+    "submitted_by": {
+      "type": "string"
+    },
+    "submitted_by_name": {
+      "type": "string"
+    },
+    "submitted_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dispatch_id": {
+      "type": "string"
+    },
+    "truck_dispatch_id": {
+      "type": "string"
+    },
+    "fuel_dock_delivery_id": {
+      "type": "string"
+    },
+    "dispatched_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sage_order_number": {
+      "type": "string"
+    },
+    "entered_in_sage": {
+      "type": "boolean",
+      "default": false
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "market",
+    "customer_name",
+    "vessel_name",
+    "destination",
+    "requested_date",
+    "method_of_delivery"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "name": "CrewMember",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "description": "Crew member's full name"
+    },
+    "email": {
+      "type": "string",
+      "description": "Crew member's email"
+    },
+    "position": {
+      "type": "string",
+      "enum": [
+        "captain",
+        "deckhand",
+        "tankerman",
+        "driver"
+      ],
+      "description": "Primary position"
+    },
+    "positions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "captain",
+          "deckhand",
+          "tankerman",
+          "driver"
+        ]
+      },
+      "description": "All positions this crew member can serve"
+    },
+    "market": {
+      "type": "string",
+      "description": "Operating market location"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone number"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether this crew member is currently active"
+    },
+    "user_id": {
+      "type": "string",
+      "description": "Reference to the User entity ID (if linked)"
+    }
+  },
+  "required": [
+    "full_name",
+    "position",
+    "market"
+  ]
+}

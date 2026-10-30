@@ -1,0 +1,166 @@
+{
+  "name": "TruckDispatch",
+  "properties": {
+    "bol_number": {
+      "description": "Bill of lading number",
+      "type": "string"
+    },
+    "brand": {
+      "description": "Brand for lubricant deliveries",
+      "enum": [
+        "Castrol",
+        "Chevron",
+        "Shell",
+        "Total Lubmarine",
+        "Lukoil",
+        "PTL Wholesale"
+      ],
+      "type": "string"
+    },
+    "closed_out": {
+      "default": false,
+      "description": "Whether dispatch has entered actual delivered quantities",
+      "type": "boolean"
+    },
+    "closed_out_by_name": {
+      "description": "Who closed out the delivery",
+      "type": "string"
+    },
+    "closed_out_date": {
+      "description": "When the delivery was closed out",
+      "format": "date-time",
+      "type": "string"
+    },
+    "customer_name": {
+      "description": "Customer name (or destination for internal/non-delivery events)",
+      "type": "string"
+    },
+    "delivery_type": {
+      "description": "Type of delivery",
+      "enum": [
+        "Bulk",
+        "Package",
+        "Load Barge"
+      ],
+      "type": "string"
+    },
+    "dispatch_date": {
+      "description": "Date of dispatch",
+      "format": "date",
+      "type": "string"
+    },
+    "driver_name": {
+      "description": "Driver name",
+      "type": "string"
+    },
+    "entered_in_sage": {
+      "default": false,
+      "description": "Whether order has been entered in Sage",
+      "type": "boolean"
+    },
+    "event_type": {
+      "default": "delivery",
+      "description": "delivery = customer delivery (counts in sales/volume stats); internal_transfer = PTL product moves (Pier 15 tank fills, Fairhaven supply, 40 South); non_delivery = training, meetings, truck swaps, tank pickups",
+      "enum": [
+        "delivery",
+        "internal_transfer",
+        "non_delivery"
+      ],
+      "type": "string"
+    },
+    "gallons": {
+      "description": "Gallons delivered",
+      "type": "number"
+    },
+    "market": {
+      "description": "Operating market for this dispatch",
+      "enum": [
+        "Richmond CA",
+        "Rancho Dominguez",
+        "Seattle"
+      ],
+      "type": "string"
+    },
+    "notes": {
+      "description": "Additional dispatch notes",
+      "type": "string"
+    },
+    "product": {
+      "description": "Product being delivered (e.g., Gasoline, ULS Diesel, Renewable Diesel)",
+      "type": "string"
+    },
+    "product_lines": {
+      "description": "Actual products on this dispatch with ordered and delivered quantities",
+      "items": {
+        "properties": {
+          "delivered_qty": {
+            "description": "Actual quantity delivered, entered at close-out",
+            "type": "number"
+          },
+          "ordered_qty": {
+            "description": "Quantity ordered/dispatched",
+            "type": "number"
+          },
+          "product_name": {
+            "description": "Actual product name (e.g., Castrol Hyspin AWS 68)",
+            "type": "string"
+          },
+          "unit": {
+            "description": "Unit of measure (gal, drum, pail, case, tote, each)",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "sage_order_number": {
+      "description": "Sage ERP order/delivery ticket number",
+      "type": "string"
+    },
+    "so_number": {
+      "description": "Sales order number",
+      "type": "string"
+    },
+    "status": {
+      "default": "scheduled",
+      "description": "Current dispatch status",
+      "enum": [
+        "scheduled",
+        "in_transit",
+        "delivered",
+        "cancelled"
+      ],
+      "type": "string"
+    },
+    "truck_id": {
+      "description": "ID of the assigned truck",
+      "type": "string"
+    },
+    "truck_number": {
+      "description": "Truck number for quick reference",
+      "type": "string"
+    },
+    "truck_type": {
+      "description": "Type of truck operation",
+      "enum": [
+        "BULK",
+        "PTL BLENDING",
+        "PICKUP",
+        "BOX TRAILER"
+      ],
+      "type": "string"
+    },
+    "vessel_name": {
+      "description": "Vessel name",
+      "type": "string"
+    }
+  },
+  "required": [
+    "market",
+    "dispatch_date",
+    "product",
+    "customer_name"
+  ],
+  "type": "object"
+}

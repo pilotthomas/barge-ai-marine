@@ -1,0 +1,69 @@
+{
+  "name": "CrewWeeklyHours",
+  "type": "object",
+  "properties": {
+    "employee_id": {
+      "type": "string",
+      "description": "Workday employee ID"
+    },
+    "worker_name": {
+      "type": "string",
+      "description": "Worker full name"
+    },
+    "job_code": {
+      "type": "string",
+      "description": "Job code / position (e.g., Marine Tankerman TM)"
+    },
+    "location": {
+      "type": "string",
+      "description": "Work location"
+    },
+    "region": {
+      "type": "string",
+      "description": "Region"
+    },
+    "manager": {
+      "type": "string",
+      "description": "Worker's manager"
+    },
+    "week_end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the last day in the 7-day report window (Tuesday)"
+    },
+    "daily_hours": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "day_name": {
+            "type": "string"
+          },
+          "hours": {
+            "type": "number"
+          }
+        }
+      },
+      "description": "Hours worked each day of the report window, in chronological order"
+    },
+    "total_hours": {
+      "type": "number",
+      "description": "Total hours worked in prior 7 days"
+    },
+    "total_days": {
+      "type": "number",
+      "description": "Total days worked in prior 7 days"
+    },
+    "overtime": {
+      "type": "number",
+      "description": "Pay period overtime hours"
+    }
+  },
+  "required": [
+    "worker_name",
+    "week_end_date"
+  ]
+}

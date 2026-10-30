@@ -1,0 +1,44 @@
+{
+  "name": "RetailFuelDockDaily",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of retail fuel dock sales"
+    },
+    "facility": {
+      "type": "string",
+      "enum": [
+        "Huntington Beach",
+        "San Francisco Pier 45",
+        "Berth 258 - Long Beach",
+        "Port Hueneme",
+        "Mobile Fuel Dock"
+      ],
+      "description": "Retail fuel dock facility location"
+    },
+    "gallons": {
+      "type": "number",
+      "description": "Total gallons sold for the day"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "operational",
+        "closed"
+      ],
+      "default": "operational",
+      "description": "Facility status - operational or closed for operation"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes"
+    }
+  },
+  "required": [
+    "date",
+    "facility",
+    "gallons"
+  ]
+}

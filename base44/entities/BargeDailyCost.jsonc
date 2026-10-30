@@ -1,0 +1,56 @@
+{
+  "name": "BargeDailyCost",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Operating date"
+    },
+    "barge_id": {
+      "type": "string",
+      "description": "ID of the barge"
+    },
+    "barge_name": {
+      "type": "string",
+      "description": "Name of the barge for quick reference"
+    },
+    "fuel_cost": {
+      "type": "number",
+      "description": "Fuel cost for the day"
+    },
+    "crew_cost": {
+      "type": "number",
+      "description": "Crew wages for the day"
+    },
+    "towing_cost": {
+      "type": "number",
+      "description": "Towing costs (internal or 3rd party)"
+    },
+    "maintenance_cost": {
+      "type": "number",
+      "description": "Maintenance/repair costs"
+    },
+    "insurance_cost": {
+      "type": "number",
+      "description": "Daily insurance allocation"
+    },
+    "overhead_cost": {
+      "type": "number",
+      "description": "Overhead/admin allocation"
+    },
+    "other_costs": {
+      "type": "number",
+      "description": "Other miscellaneous costs"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes about costs for the day"
+    }
+  },
+  "required": [
+    "date",
+    "barge_id",
+    "barge_name"
+  ]
+}

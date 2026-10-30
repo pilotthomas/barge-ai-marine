@@ -1,0 +1,81 @@
+{
+  "name": "RecurringOrder",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Order template name / description"
+    },
+    "delivery_type": {
+      "type": "string",
+      "enum": [
+        "Barge",
+        "Truck",
+        "X-Pipe"
+      ],
+      "description": "Type of delivery"
+    },
+    "market": {
+      "type": "string",
+      "enum": [
+        "Long Beach",
+        "Oakland",
+        "Portland",
+        "Seattle",
+        "Richmond CA",
+        "Rancho Dominguez"
+      ],
+      "description": "Operating market"
+    },
+    "customer_name": {
+      "type": "string",
+      "description": "Customer name"
+    },
+    "vessel_name": {
+      "type": "string",
+      "description": "Vessel name (for Barge/X-Pipe)"
+    },
+    "destination": {
+      "type": "string",
+      "description": "Delivery destination or dock location"
+    },
+    "product": {
+      "type": "string",
+      "description": "Product type"
+    },
+    "brand": {
+      "type": "string",
+      "description": "Brand (for lubricants)"
+    },
+    "gallons": {
+      "type": "number",
+      "description": "Default gallons for this recurring order"
+    },
+    "frequency": {
+      "type": "string",
+      "enum": [
+        "daily",
+        "weekly",
+        "biweekly",
+        "monthly"
+      ],
+      "default": "weekly",
+      "description": "How often this order recurs"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether this recurring order template is active"
+    }
+  },
+  "required": [
+    "name",
+    "delivery_type",
+    "market",
+    "customer_name"
+  ]
+}

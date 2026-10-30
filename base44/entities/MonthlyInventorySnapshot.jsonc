@@ -1,0 +1,37 @@
+{
+  "name": "MonthlyInventorySnapshot",
+  "type": "object",
+  "properties": {
+    "barge_id": {
+      "type": "string",
+      "description": "ID of the barge"
+    },
+    "barge_name": {
+      "type": "string",
+      "description": "Name of the barge for quick reference"
+    },
+    "month_year": {
+      "type": "string",
+      "description": "Month and year in format YYYY-MM"
+    },
+    "product_type": {
+      "type": "string",
+      "description": "Product type (RD99, MGO, CARB Diesel, Lubricants, etc.)"
+    },
+    "beginning_inventory": {
+      "type": "number",
+      "description": "Beginning inventory gallons for this product for the month"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes"
+    }
+  },
+  "required": [
+    "barge_id",
+    "barge_name",
+    "month_year",
+    "product_type",
+    "beginning_inventory"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "name": "ResolvedVariance",
+  "type": "object",
+  "properties": {
+    "barge_id": {
+      "type": "string",
+      "description": "ID of the barge"
+    },
+    "barge_name": {
+      "type": "string",
+      "description": "Name of the barge for reference"
+    },
+    "product_type": {
+      "type": "string",
+      "description": "Product type for this variance"
+    },
+    "variance_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the variance"
+    },
+    "calculated_total": {
+      "type": "number",
+      "description": "Rolling inventory calculated total"
+    },
+    "physical_total": {
+      "type": "number",
+      "description": "Physical tank level total"
+    },
+    "difference": {
+      "type": "number",
+      "description": "Difference in gallons"
+    },
+    "resolution_notes": {
+      "type": "string",
+      "description": "Notes about how variance was resolved"
+    },
+    "resolved_by_name": {
+      "type": "string",
+      "description": "Name of person who resolved it"
+    },
+    "resolved_by_email": {
+      "type": "string",
+      "description": "Email of person who resolved it"
+    }
+  },
+  "required": [
+    "barge_id",
+    "barge_name",
+    "product_type",
+    "variance_date"
+  ]
+}

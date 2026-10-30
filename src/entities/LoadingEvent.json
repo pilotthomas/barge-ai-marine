@@ -1,0 +1,60 @@
+{
+  "name": "LoadingEvent",
+  "type": "object",
+  "properties": {
+    "barge_id": {
+      "type": "string",
+      "description": "ID of the barge to be loaded"
+    },
+    "barge_name": {
+      "type": "string",
+      "description": "Name of the barge for quick reference"
+    },
+    "scheduled_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of loading event"
+    },
+    "scheduled_time": {
+      "type": "string",
+      "description": "Time of loading in 24-hour format (e.g., 0900, 1430)"
+    },
+    "terminal_location": {
+      "type": "string",
+      "description": "Terminal or facility location for loading"
+    },
+    "product_type": {
+      "type": "string",
+      "description": "Product to be loaded"
+    },
+    "gallons_to_load": {
+      "type": "number",
+      "description": "Quantity to load in gallons"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "scheduled",
+        "in_progress",
+        "completed",
+        "cancelled"
+      ],
+      "default": "scheduled",
+      "description": "Current status of the loading event"
+    },
+    "related_delivery_id": {
+      "type": "string",
+      "description": "ID of related delivery dispatch if applicable"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the loading event"
+    }
+  },
+  "required": [
+    "barge_id",
+    "barge_name",
+    "scheduled_date",
+    "terminal_location"
+  ]
+}

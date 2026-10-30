@@ -1,0 +1,53 @@
+{
+  "name": "Truck",
+  "type": "object",
+  "properties": {
+    "truck_number": {
+      "type": "string",
+      "description": "Truck identifier/number"
+    },
+    "market": {
+      "type": "string",
+      "enum": [
+        "Richmond CA",
+        "Rancho Dominguez",
+        "Seattle",
+        "Mobile"
+      ],
+      "description": "Operating market location"
+    },
+    "truck_type": {
+      "type": "string",
+      "enum": [
+        "PICKUP",
+        "BOX TRAILER",
+        "BULK",
+        "PTL BLENDING"
+      ],
+      "description": "Type of truck"
+    },
+    "capacity_gallons": {
+      "type": "number",
+      "description": "Maximum capacity in gallons"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "available",
+        "dispatched",
+        "maintenance",
+        "retired"
+      ],
+      "default": "available",
+      "description": "Current truck status"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the truck"
+    }
+  },
+  "required": [
+    "truck_number",
+    "market"
+  ]
+}

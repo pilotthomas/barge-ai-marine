@@ -1,0 +1,55 @@
+{
+  "name": "BargeInventory",
+  "type": "object",
+  "properties": {
+    "barge_id": {
+      "type": "string",
+      "description": "ID of the barge"
+    },
+    "barge_name": {
+      "type": "string",
+      "description": "Name of the barge for quick reference"
+    },
+    "tank_number": {
+      "type": "number",
+      "description": "Tank number (1-8, etc.)"
+    },
+    "tank_position": {
+      "type": "string",
+      "enum": [
+        "starboard",
+        "port"
+      ],
+      "description": "Tank position on the barge"
+    },
+    "capacity_gallons": {
+      "type": "number",
+      "description": "Tank capacity in gallons"
+    },
+    "current_gallons": {
+      "type": "number",
+      "default": 0,
+      "description": "Current quantity in tank"
+    },
+    "product_type": {
+      "type": "string",
+      "description": "Type of product currently in tank"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last update timestamp"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the tank"
+    }
+  },
+  "required": [
+    "barge_id",
+    "barge_name",
+    "tank_number",
+    "tank_position",
+    "capacity_gallons"
+  ]
+}

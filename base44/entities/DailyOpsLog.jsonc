@@ -1,0 +1,83 @@
+{
+  "name": "DailyOpsLog",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of operations"
+    },
+    "location": {
+      "type": "string",
+      "enum": [
+        "Long Beach",
+        "Oakland",
+        "Portland",
+        "Seattle"
+      ],
+      "description": "Terminal location"
+    },
+    "tugs_operating": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of tug names operating this day"
+    },
+    "barges_operating": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of barge names operating this day"
+    },
+    "third_party_towing": {
+      "type": "boolean",
+      "default": false,
+      "description": "Used third party towing this day"
+    },
+    "fleet_dock_operating": {
+      "type": "boolean",
+      "default": false,
+      "description": "Fleet dock was operating"
+    },
+    "gallons_delivered_barge": {
+      "type": "number",
+      "default": 0,
+      "description": "Gallons delivered by barge"
+    },
+    "gallons_delivered_dock": {
+      "type": "number",
+      "default": 0,
+      "description": "Gallons delivered by dock"
+    },
+    "deckhands_working": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of deckhands working"
+    },
+    "tankermen_working": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of tankermen working"
+    },
+    "captains_working": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of captains working"
+    },
+    "fleet_dock_attendance": {
+      "type": "number",
+      "default": 0,
+      "description": "Fleet dock crew attendance"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes for the day"
+    }
+  },
+  "required": [
+    "date",
+    "location"
+  ]
+}

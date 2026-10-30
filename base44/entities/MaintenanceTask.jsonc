@@ -1,0 +1,150 @@
+{
+  "name": "MaintenanceTask",
+  "type": "object",
+  "properties": {
+    "vessel_type": {
+      "type": "string",
+      "enum": [
+        "barge",
+        "tug"
+      ],
+      "description": "Type of vessel"
+    },
+    "vessel_id": {
+      "type": "string",
+      "description": "ID of the barge or tug"
+    },
+    "vessel_name": {
+      "type": "string",
+      "description": "Name of the vessel for quick reference"
+    },
+    "task_type": {
+      "type": "string",
+      "enum": [
+        "USCG Compliance",
+        "ABS Compliance",
+        "SIRE Compliance",
+        "Drydock Schedule",
+        "Scheduled Maintenance",
+        "Internal Inspection",
+        "Vessel Inspection",
+        "Unplanned R&M"
+      ],
+      "description": "Type of compliance or maintenance task"
+    },
+    "task_name": {
+      "type": "string",
+      "description": "Specific name of the task (e.g., 'USCG CARGO TANK', 'ABS LOAD LINE')"
+    },
+    "status_code": {
+      "type": "string",
+      "enum": [
+        "DRY DOCK",
+        "REGULATORY",
+        "MECHANICAL",
+        "OTHER"
+      ],
+      "description": "Status code for the maintenance"
+    },
+    "current_condition": {
+      "type": "string",
+      "enum": [
+        "EXTENDED OUTAGE",
+        "MODERATE REPAIR",
+        "IN SERVICE"
+      ],
+      "description": "Current condition of the vessel"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date",
+      "description": "When the task is due"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "upcoming",
+        "due_soon",
+        "overdue",
+        "completed",
+        "scheduled"
+      ],
+      "default": "upcoming",
+      "description": "Current status of the task"
+    },
+    "completion_date": {
+      "type": "string",
+      "format": "date",
+      "description": "When the task was completed"
+    },
+    "drydock_out_of_water_date": {
+      "type": "string",
+      "format": "date",
+      "description": "For drydocks: estimated date out of water"
+    },
+    "drydock_back_in_water_date": {
+      "type": "string",
+      "format": "date",
+      "description": "For drydocks: estimated date back in water"
+    },
+    "facility_location": {
+      "type": "string",
+      "description": "Facility or location where work will be performed"
+    },
+    "estimated_downtime_days": {
+      "type": "number",
+      "description": "Estimated days vessel will be down"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the task"
+    },
+    "last_alert_sent": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the last email alert was sent"
+    },
+    "is_afe_item": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether this is an AFE (Authorization for Expenditure) item"
+    },
+    "afe_request_number": {
+      "type": "string",
+      "description": "AFE Request Number"
+    },
+    "afe_po_number": {
+      "type": "string",
+      "description": "AFE PO Number"
+    },
+    "vendor_name": {
+      "type": "string",
+      "description": "Vendor Name"
+    },
+    "budgeted_amount": {
+      "type": "number",
+      "description": "Budgeted Amount ($)"
+    },
+    "final_charge": {
+      "type": "number",
+      "description": "Final Charge ($)"
+    },
+    "new_expiration_date": {
+      "type": "string",
+      "format": "date",
+      "description": "New expiration/due date after inspection closeout"
+    },
+    "inspection_pdf_url": {
+      "type": "string",
+      "description": "URL of uploaded inspection document (PDF) for retention"
+    }
+  },
+  "required": [
+    "vessel_type",
+    "vessel_id",
+    "vessel_name",
+    "task_type",
+    "task_name",
+    "due_date"
+  ]
+}

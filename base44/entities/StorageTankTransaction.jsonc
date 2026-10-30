@@ -1,0 +1,101 @@
+{
+  "name": "StorageTankTransaction",
+  "type": "object",
+  "properties": {
+    "tank_id": {
+      "type": "string",
+      "description": "ID of the storage tank"
+    },
+    "facility_name": {
+      "type": "string",
+      "description": "Facility name for quick reference"
+    },
+    "tank_number": {
+      "type": "string",
+      "description": "Tank identifier for quick reference"
+    },
+    "transaction_type": {
+      "type": "string",
+      "enum": [
+        "truck_in",
+        "truck_out"
+      ],
+      "description": "Type of transaction"
+    },
+    "transaction_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of transaction"
+    },
+    "gallons": {
+      "type": "number",
+      "description": "Gallons moved"
+    },
+    "product_type": {
+      "type": "string",
+      "description": "Product type"
+    },
+    "truck_number": {
+      "type": "string",
+      "description": "Truck identifier"
+    },
+    "bol_number": {
+      "type": "string",
+      "description": "Bill of Lading number"
+    },
+    "driver_name": {
+      "type": "string",
+      "description": "Driver name"
+    },
+    "customer": {
+      "type": "string",
+      "description": "Customer name (for truck out)"
+    },
+    "supplier": {
+      "type": "string",
+      "description": "Supplier name (for truck in)"
+    },
+    "used_carrier": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether a carrier was used (for truck out)"
+    },
+    "previous_gallons": {
+      "type": "number",
+      "description": "Tank level before transaction"
+    },
+    "new_gallons": {
+      "type": "number",
+      "description": "Tank level after transaction"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes"
+    },
+    "market": {
+      "type": "string",
+      "enum": [
+        "Long Beach",
+        "Oakland",
+        "Portland",
+        "Seattle",
+        "Wood River",
+        "St. Louis",
+        "Wickliffe",
+        "Memphis",
+        "Baton Rouge",
+        "Mobile"
+      ],
+      "description": "Operating market of the tank (drives regional visibility)"
+    }
+  },
+  "required": [
+    "tank_id",
+    "facility_name",
+    "tank_number",
+    "transaction_type",
+    "transaction_date",
+    "gallons",
+    "product_type"
+  ]
+}

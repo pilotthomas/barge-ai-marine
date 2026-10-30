@@ -1,0 +1,46 @@
+{
+  "name": "EmailNotificationSettings",
+  "type": "object",
+  "properties": {
+    "notification_type": {
+      "type": "string",
+      "enum": [
+        "order_confirmation",
+        "dispatch_confirmation",
+        "order_deletion",
+        "delivery_deletion",
+        "hedged_order",
+        "daily_recap"
+      ],
+      "description": "Type of notification"
+    },
+    "market": {
+      "type": "string",
+      "enum": [
+        "all",
+        "Long Beach",
+        "Oakland",
+        "Portland",
+        "Seattle"
+      ],
+      "default": "all",
+      "description": "Market for this notification setting (or 'all' for global)"
+    },
+    "recipient_emails": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of email addresses to receive this notification"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether this notification is active"
+    }
+  },
+  "required": [
+    "notification_type",
+    "recipient_emails"
+  ]
+}

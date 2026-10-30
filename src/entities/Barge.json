@@ -1,0 +1,58 @@
+{
+  "name": "Barge",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Barge identification name or number"
+    },
+    "capacity_gallons": {
+      "type": "number",
+      "description": "Maximum capacity in gallons"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "available",
+        "dispatched",
+        "maintenance",
+        "retired"
+      ],
+      "default": "available",
+      "description": "Current barge status"
+    },
+    "market": {
+      "type": "string",
+      "enum": [
+        "Long Beach",
+        "Oakland",
+        "Portland",
+        "Seattle"
+      ],
+      "description": "Operating market location"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "tank",
+        "deck",
+        "hopper",
+        "other"
+      ],
+      "default": "tank",
+      "description": "Type of barge"
+    },
+    "year_built": {
+      "type": "number",
+      "description": "Year the barge was built"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the barge"
+    }
+  },
+  "required": [
+    "name",
+    "capacity_gallons"
+  ]
+}

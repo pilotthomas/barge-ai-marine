@@ -1,0 +1,46 @@
+{
+  "name": "DailyCOGS",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date for COGS entry"
+    },
+    "market": {
+      "type": "string",
+      "enum": [
+        "Long Beach",
+        "Oakland",
+        "Portland",
+        "Seattle"
+      ],
+      "description": "Warehouse/market location"
+    },
+    "product_type": {
+      "type": "string",
+      "enum": [
+        "MGO",
+        "RD99",
+        "CARB Diesel",
+        "ULSD",
+        "Other"
+      ],
+      "description": "Product type for this COGS entry"
+    },
+    "cogs_per_gallon": {
+      "type": "number",
+      "description": "Cost of Goods Sold per gallon for this product/market on this date (from Sage)"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes about the day's COGS (e.g., Sage reference)"
+    }
+  },
+  "required": [
+    "date",
+    "market",
+    "product_type",
+    "cogs_per_gallon"
+  ]
+}

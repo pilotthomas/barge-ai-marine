@@ -1,0 +1,127 @@
+{
+  "name": "Barge",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Barge identification name or number"
+    },
+    "designation": {
+      "type": "string",
+      "enum": [
+        "fuel_flat",
+        "supply"
+      ],
+      "description": "Barge designation: Fuel Flat or Supply Barge"
+    },
+    "capacity_gallons": {
+      "type": "number",
+      "description": "Maximum capacity in gallons (auto-calculated from tanks)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "available",
+        "dispatched",
+        "maintenance",
+        "retired"
+      ],
+      "default": "available",
+      "description": "Current barge status"
+    },
+    "market": {
+      "type": "string",
+      "enum": [
+        "Long Beach",
+        "Oakland",
+        "Portland",
+        "Seattle",
+        "Wood River",
+        "St. Louis",
+        "Wickliffe",
+        "Memphis",
+        "Baton Rouge",
+        "Mobile"
+      ],
+      "description": "Operating market location"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "tank",
+        "deck",
+        "hopper",
+        "other"
+      ],
+      "default": "tank",
+      "description": "Type of barge"
+    },
+    "year_built": {
+      "type": "number",
+      "description": "Year the barge was built"
+    },
+    "uscg_2_5_year_drydock": {
+      "type": "string",
+      "format": "date",
+      "description": "USCG 2.5 Year Dry Dock Exam due date"
+    },
+    "uscg_internal_exam": {
+      "type": "string",
+      "format": "date",
+      "description": "USCG Internal Exam due date"
+    },
+    "uscg_5_year_drydock": {
+      "type": "string",
+      "format": "date",
+      "description": "USCG 5 Year Dry Dock Exam due date"
+    },
+    "uscg_cargo_tank_exam": {
+      "type": "string",
+      "format": "date",
+      "description": "USCG Cargo Tank Exam due date"
+    },
+    "abs_2_5_year_drydock": {
+      "type": "string",
+      "format": "date",
+      "description": "ABS 2.5 Year Dry Dock Exam due date"
+    },
+    "sire_expiration": {
+      "type": "string",
+      "format": "date",
+      "description": "SIRE Expiration Date"
+    },
+    "abs_load_line": {
+      "type": "string",
+      "format": "date",
+      "description": "ABS Load Line due date"
+    },
+    "abs_class": {
+      "type": "string",
+      "format": "date",
+      "description": "ABS Class due date"
+    },
+    "uscg_coi_expiration": {
+      "type": "string",
+      "format": "date",
+      "description": "USCG COI (Certificate of Inspection) Expiration"
+    },
+    "uscg_cod_expiration": {
+      "type": "string",
+      "format": "date",
+      "description": "USCG COD (Certificate of Documentation) Expiration"
+    },
+    "carb_tier3_mandate": {
+      "type": "string",
+      "format": "date",
+      "description": "CARB Tier 3 Mandate Date (CA vessels)"
+    },
+    "carb_tier4_mandate": {
+      "type": "string",
+      "format": "date",
+      "description": "CARB Tier 4 Mandate Date (CA vessels)"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "name": "DeliveryScheduleChange",
+  "type": "object",
+  "properties": {
+    "dispatch_id": {
+      "type": "string",
+      "description": "ID of the delivery/dispatch"
+    },
+    "vessel_name": {
+      "type": "string",
+      "description": "Vessel name for quick reference"
+    },
+    "barge_name": {
+      "type": "string",
+      "description": "Barge name for quick reference"
+    },
+    "customer": {
+      "type": "string",
+      "description": "Customer name"
+    },
+    "previous_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Previous scheduled date"
+    },
+    "new_date": {
+      "type": "string",
+      "format": "date",
+      "description": "New scheduled date"
+    },
+    "change_reason": {
+      "type": "string",
+      "description": "Reason for date change (e.g., weather, customer request, equipment issue)"
+    },
+    "changed_by_name": {
+      "type": "string",
+      "description": "Name of person who made the change"
+    },
+    "changed_by_email": {
+      "type": "string",
+      "description": "Email of person who made the change"
+    },
+    "change_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the change was made"
+    }
+  },
+  "required": [
+    "dispatch_id",
+    "vessel_name",
+    "previous_date",
+    "new_date",
+    "change_reason"
+  ]
+}

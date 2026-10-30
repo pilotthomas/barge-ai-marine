@@ -1,0 +1,109 @@
+{
+  "name": "Dispatch",
+  "type": "object",
+  "properties": {
+    "market": {
+      "type": "string",
+      "enum": [
+        "Long Beach",
+        "Oakland",
+        "Portland",
+        "Seattle"
+      ],
+      "description": "Operating market for this dispatch"
+    },
+    "barge_id": {
+      "type": "string",
+      "description": "ID of the assigned barge"
+    },
+    "barge_name": {
+      "type": "string",
+      "description": "Name of the barge for quick reference"
+    },
+    "tug_id": {
+      "type": "string",
+      "description": "ID of the assigned tug"
+    },
+    "tug_name": {
+      "type": "string",
+      "description": "Name of the tug for quick reference"
+    },
+    "is_third_party_towing": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether using third-party towing provider"
+    },
+    "captain": {
+      "type": "string",
+      "description": "Captain name"
+    },
+    "deckhand": {
+      "type": "string",
+      "description": "Deckhand name"
+    },
+    "tankerman": {
+      "type": "string",
+      "description": "Tankerman name"
+    },
+    "crew_members": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Additional crew member names"
+    },
+    "vessel_name": {
+      "type": "string",
+      "description": "Vessel name"
+    },
+    "destination": {
+      "type": "string",
+      "description": "Delivery destination"
+    },
+    "cargo_type": {
+      "type": "string",
+      "description": "Type of cargo being transported"
+    },
+    "gallons_delivered": {
+      "type": "number",
+      "description": "Actual gallons delivered"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Dispatch start date"
+    },
+    "requested_delivery_time": {
+      "type": "string",
+      "description": "Requested delivery time in 24-hour maritime format (e.g., 0900, 1430)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "scheduled",
+        "in_transit",
+        "delivered",
+        "cancelled"
+      ],
+      "default": "scheduled",
+      "description": "Current dispatch status"
+    },
+    "customer": {
+      "type": "string",
+      "description": "Customer name"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional dispatch notes"
+    }
+  },
+  "required": [
+    "market",
+    "barge_id",
+    "barge_name",
+    "captain",
+    "vessel_name",
+    "destination",
+    "start_date"
+  ]
+}

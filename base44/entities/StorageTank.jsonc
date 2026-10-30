@@ -1,0 +1,110 @@
+{
+  "name": "StorageTank",
+  "properties": {
+    "capacity_gallons": {
+      "description": "Tank capacity in gallons",
+      "type": "number"
+    },
+    "chart_source": {
+      "description": "Where the strapping chart came from (vendor, strap date, sheet)",
+      "type": "string"
+    },
+    "current_gallons": {
+      "default": 0,
+      "description": "Current quantity in tank",
+      "type": "number"
+    },
+    "facility_name": {
+      "description": "Facility name (e.g., Rancho Dominguez)",
+      "type": "string"
+    },
+    "fuel_dock_location": {
+      "description": "Fuel dock this tank supplies (e.g., Seattle Pier 15)",
+      "type": "string"
+    },
+    "is_fuel_dock_connected": {
+      "default": false,
+      "description": "Whether this shore tank feeds a fuel dock pipeline (e.g., Seattle Pier 15)",
+      "type": "boolean"
+    },
+    "last_gauge_date": {
+      "description": "When the most recent gauge reading was taken",
+      "format": "date-time",
+      "type": "string"
+    },
+    "last_gauge_inches": {
+      "description": "Most recent physical gauge reading in inches",
+      "type": "number"
+    },
+    "last_updated": {
+      "description": "Last update timestamp",
+      "format": "date-time",
+      "type": "string"
+    },
+    "market": {
+      "description": "Operating market this tank belongs to (drives regional visibility)",
+      "enum": [
+        "Long Beach",
+        "Oakland",
+        "Portland",
+        "Seattle",
+        "Wood River",
+        "St. Louis",
+        "Wickliffe",
+        "Memphis",
+        "Baton Rouge",
+        "Mobile"
+      ],
+      "type": "string"
+    },
+    "notes": {
+      "description": "Additional notes",
+      "type": "string"
+    },
+    "product_type": {
+      "description": "Product currently in tank",
+      "type": "string"
+    },
+    "reference_gauge_height": {
+      "description": "Reference gauge height to benchmark (e.g., 21'-0\")",
+      "type": "string"
+    },
+    "safe_fill_gallons": {
+      "description": "Safe fill / high-level limit in gallons (typically 90%)",
+      "type": "number"
+    },
+    "strapping_chart": {
+      "description": "Innage strapping chart points: gauge height in inches -> gallons. Readings between points are linearly interpolated.",
+      "items": {
+        "properties": {
+          "gallons": {
+            "type": "number"
+          },
+          "inches": {
+            "type": "number"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "tank_number": {
+      "description": "Tank identifier (e.g., Tank 1, Tank A)",
+      "type": "string"
+    },
+    "tank_shape": {
+      "description": "Vertical cylinder (near-linear chart) or horizontal cylinder (curved chart)",
+      "enum": [
+        "vertical",
+        "horizontal"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "facility_name",
+    "tank_number",
+    "capacity_gallons"
+  ],
+  "type": "object"
+}

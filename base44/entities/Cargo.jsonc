@@ -1,0 +1,78 @@
+{
+  "name": "Cargo",
+  "properties": {
+    "brand": {
+      "description": "Brand for lubricants products (Bulk and Packaged)",
+      "enum": [
+        "Castrol",
+        "Chevron",
+        "Lenol",
+        "Shell",
+        "Total",
+        "PTL Wholesale"
+      ],
+      "type": "string"
+    },
+    "category": {
+      "default": "Fuel",
+      "description": "Cargo category",
+      "enum": [
+        "Fuel",
+        "Lubes",
+        "Other"
+      ],
+      "type": "string"
+    },
+    "delivery_method": {
+      "description": "Whether this product is for marine (barge/fuel dock) deliveries, trucking deliveries, or both",
+      "enum": [
+        "Marine",
+        "Trucking",
+        "Both"
+      ],
+      "type": "string"
+    },
+    "description": {
+      "description": "Detailed description of the cargo type",
+      "type": "string"
+    },
+    "gallons_per_metric_ton": {
+      "description": "Gallons per metric ton used for MT/gallon conversion on orders and dispatches",
+      "type": "number"
+    },
+    "handling_notes": {
+      "description": "Special handling requirements or notes",
+      "type": "string"
+    },
+    "is_active": {
+      "default": true,
+      "description": "Whether this cargo type is currently in use",
+      "type": "boolean"
+    },
+    "metric_tons_per_gallon_conversion": {
+      "description": "Conversion factor: metric tons per gallon (API-specific gravity)",
+      "type": "number"
+    },
+    "name": {
+      "description": "Cargo type name (e.g., Diesel, Gasoline, Lubricants - Bulk)",
+      "type": "string"
+    },
+    "regions": {
+      "default": [],
+      "description": "Regions where this product is available. Empty = available in all regions.",
+      "items": {
+        "enum": [
+          "PNW",
+          "California",
+          "Marine East"
+        ],
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "type": "object"
+}

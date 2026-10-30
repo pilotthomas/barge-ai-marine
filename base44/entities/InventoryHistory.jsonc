@@ -1,0 +1,88 @@
+{
+  "name": "InventoryHistory",
+  "type": "object",
+  "properties": {
+    "barge_id": {
+      "type": "string",
+      "description": "ID of the barge"
+    },
+    "barge_name": {
+      "type": "string",
+      "description": "Name of the barge for quick reference"
+    },
+    "tank_number": {
+      "type": "number",
+      "description": "Tank number"
+    },
+    "tank_position": {
+      "type": "string",
+      "enum": [
+        "starboard",
+        "port"
+      ],
+      "description": "Tank position on the barge"
+    },
+    "tank_color": {
+      "type": "string",
+      "enum": [
+        "yellow",
+        "green",
+        "red",
+        "blue",
+        "none"
+      ],
+      "description": "Tank color identifier (for lubes only)"
+    },
+    "product_type": {
+      "type": "string",
+      "description": "Type of product in tank"
+    },
+    "previous_gallons": {
+      "type": "number",
+      "description": "Previous quantity in tank before change"
+    },
+    "new_gallons": {
+      "type": "number",
+      "description": "New quantity in tank after change"
+    },
+    "change_gallons": {
+      "type": "number",
+      "description": "Change in gallons (new - previous)"
+    },
+    "capacity_gallons": {
+      "type": "number",
+      "description": "Tank capacity in gallons"
+    },
+    "snapshot_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time of this snapshot"
+    },
+    "change_type": {
+      "type": "string",
+      "enum": [
+        "manual_update",
+        "delivery",
+        "loading",
+        "transfer",
+        "initial"
+      ],
+      "description": "Type of change that caused this snapshot"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes about this change"
+    }
+  },
+  "required": [
+    "barge_id",
+    "barge_name",
+    "tank_number",
+    "tank_position",
+    "product_type",
+    "new_gallons",
+    "capacity_gallons",
+    "snapshot_date",
+    "change_type"
+  ]
+}

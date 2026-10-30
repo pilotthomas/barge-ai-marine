@@ -1,0 +1,65 @@
+{
+  "name": "LostRevenueEntry",
+  "type": "object",
+  "properties": {
+    "vessel_name": {
+      "type": "string",
+      "description": "Barge or tug name"
+    },
+    "vessel_type": {
+      "type": "string",
+      "enum": [
+        "barge",
+        "tug"
+      ],
+      "default": "barge",
+      "description": "Type of vessel"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date vessel went out of service"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date vessel returned to service"
+    },
+    "reason": {
+      "type": "string",
+      "description": "Reason for downtime (e.g., Dry Dock, Mechanical, Regulatory)"
+    },
+    "estimated_volume_lost_gallons": {
+      "type": "number",
+      "description": "Estimated gallons of volume lost due to downtime"
+    },
+    "revenue_lost": {
+      "type": "number",
+      "description": "Estimated revenue lost ($)"
+    },
+    "comments": {
+      "type": "string",
+      "description": "Additional comments"
+    },
+    "market": {
+      "type": "string",
+      "enum": [
+        "Long Beach",
+        "Oakland",
+        "Portland",
+        "Seattle",
+        "Wood River",
+        "St. Louis",
+        "Wickliffe",
+        "Memphis",
+        "Baton Rouge",
+        "Mobile"
+      ],
+      "description": "Operating market"
+    }
+  },
+  "required": [
+    "vessel_name",
+    "start_date"
+  ]
+}

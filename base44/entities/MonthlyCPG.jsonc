@@ -1,0 +1,43 @@
+{
+  "name": "MonthlyCPG",
+  "type": "object",
+  "properties": {
+    "month_year": {
+      "type": "string",
+      "description": "Month and year in format YYYY-MM"
+    },
+    "market": {
+      "type": "string",
+      "enum": [
+        "Long Beach",
+        "Oakland",
+        "Portland",
+        "Seattle"
+      ],
+      "description": "Operating market"
+    },
+    "direct_expense_cpg": {
+      "type": "number",
+      "description": "Direct Expense Cost Per Gallon (delivery costs, crew, R&M, etc.)"
+    },
+    "indirect_expense_cpg": {
+      "type": "number",
+      "description": "Indirect Expense Cost Per Gallon (warehouse, support costs)"
+    },
+    "sga_cpg": {
+      "type": "number",
+      "description": "SG&A Cost Per Gallon (corporate overhead)"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Notes about the month's costs"
+    }
+  },
+  "required": [
+    "month_year",
+    "market",
+    "direct_expense_cpg",
+    "indirect_expense_cpg",
+    "sga_cpg"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Cargo",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Cargo type name (e.g., Diesel, Gasoline, Lubricants - Bulk)"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Fuel",
+        "Lubes",
+        "Other"
+      ],
+      "default": "Fuel",
+      "description": "Cargo category"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the cargo type"
+    },
+    "handling_notes": {
+      "type": "string",
+      "description": "Special handling requirements or notes"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether this cargo type is currently in use"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

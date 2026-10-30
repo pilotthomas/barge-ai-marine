@@ -1,0 +1,121 @@
+{
+  "name": "LoadingEvent",
+  "type": "object",
+  "properties": {
+    "barge_id": {
+      "type": "string",
+      "description": "ID of the barge to be loaded"
+    },
+    "barge_name": {
+      "type": "string",
+      "description": "Name of the barge for quick reference"
+    },
+    "tug_id": {
+      "type": "string",
+      "description": "ID of the assigned tug"
+    },
+    "tug_name": {
+      "type": "string",
+      "description": "Name of the tug for quick reference"
+    },
+    "scheduled_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of loading event"
+    },
+    "scheduled_time": {
+      "type": "string",
+      "description": "Time of loading in 24-hour format (e.g., 0900, 1430)"
+    },
+    "terminal_location": {
+      "type": "string",
+      "description": "Terminal or facility location for loading"
+    },
+    "supplier": {
+      "type": "string",
+      "description": "Supplier providing the product (e.g., Chevron, Neste, Shell)"
+    },
+    "is_truck_loading": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether loading via PTL trucks"
+    },
+    "truck_numbers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of truck numbers used for loading"
+    },
+    "bol_numbers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of BOL numbers for truck loads"
+    },
+    "truck_gallons": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "description": "Gallons loaded by each truck"
+    },
+    "captain": {
+      "type": "string",
+      "description": "Captain name"
+    },
+    "deckhand": {
+      "type": "string",
+      "description": "Deckhand name"
+    },
+    "tankerman": {
+      "type": "string",
+      "description": "Tankerman name"
+    },
+    "crew_members": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Additional crew member names"
+    },
+    "product_type": {
+      "type": "string",
+      "description": "Product to be loaded"
+    },
+    "gallons_to_load": {
+      "type": "number",
+      "description": "Quantity to load in gallons"
+    },
+    "sage_order_number": {
+      "type": "string",
+      "description": "SAGE sales order number (for lubricants only)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "scheduled",
+        "in_progress",
+        "completed",
+        "cancelled"
+      ],
+      "default": "scheduled",
+      "description": "Current status of the loading event"
+    },
+    "related_delivery_id": {
+      "type": "string",
+      "description": "ID of related delivery dispatch if applicable"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the loading event"
+    }
+  },
+  "required": [
+    "barge_id",
+    "barge_name",
+    "scheduled_date",
+    "terminal_location"
+  ]
+}

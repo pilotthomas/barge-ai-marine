@@ -1,0 +1,83 @@
+{
+  "name": "TankGaugeReading",
+  "type": "object",
+  "properties": {
+    "tank_id": {
+      "type": "string",
+      "description": "StorageTank ID"
+    },
+    "tank_number": {
+      "type": "string"
+    },
+    "facility_name": {
+      "type": "string"
+    },
+    "market": {
+      "type": "string",
+      "enum": [
+        "Long Beach",
+        "Oakland",
+        "Portland",
+        "Seattle",
+        "Wood River",
+        "St. Louis",
+        "Wickliffe",
+        "Memphis",
+        "Baton Rouge",
+        "Mobile"
+      ]
+    },
+    "reading_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the tank was gauged"
+    },
+    "gauge_inches": {
+      "type": "number",
+      "description": "Innage gauge in total inches"
+    },
+    "gauge_display": {
+      "type": "string",
+      "description": "Gauge as read, e.g. 12' 4 1/2\""
+    },
+    "gallons": {
+      "type": "number",
+      "description": "Gallons from strapping chart"
+    },
+    "book_gallons": {
+      "type": "number",
+      "description": "Book (system) gallons before this reading"
+    },
+    "variance_gallons": {
+      "type": "number",
+      "description": "Gauge gallons minus book gallons"
+    },
+    "product_type": {
+      "type": "string"
+    },
+    "reading_type": {
+      "type": "string",
+      "enum": [
+        "opening",
+        "closing",
+        "spot",
+        "pre_transfer",
+        "post_transfer"
+      ],
+      "default": "spot"
+    },
+    "taken_by": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "tank_id",
+    "tank_number",
+    "reading_date",
+    "gauge_inches",
+    "gallons"
+  ]
+}

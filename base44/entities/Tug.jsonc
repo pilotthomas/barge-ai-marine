@@ -1,0 +1,94 @@
+{
+  "name": "Tug",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Tug boat name"
+    },
+    "company_name": {
+      "type": "string",
+      "description": "Towing company name (for 3rd party tugs)"
+    },
+    "market": {
+      "type": "string",
+      "enum": [
+        "Long Beach",
+        "Oakland",
+        "Portland",
+        "Seattle",
+        "Wood River",
+        "St. Louis",
+        "Wickliffe",
+        "Memphis",
+        "Baton Rouge",
+        "Mobile"
+      ],
+      "description": "Operating market location"
+    },
+    "is_third_party": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether this is a third-party towing provider"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "available",
+        "assigned",
+        "maintenance",
+        "retired"
+      ],
+      "default": "available",
+      "description": "Current tug status"
+    },
+    "uscg_internal_exam": {
+      "type": "string",
+      "format": "date",
+      "description": "USCG Internal Exam due date"
+    },
+    "uscg_5_year_drydock": {
+      "type": "string",
+      "format": "date",
+      "description": "USCG 5 Year Dry Dock Exam due date"
+    },
+    "abs_2_5_year_drydock": {
+      "type": "string",
+      "format": "date",
+      "description": "ABS 2.5 Year Dry Dock Exam due date"
+    },
+    "sire_expiration": {
+      "type": "string",
+      "format": "date",
+      "description": "SIRE Expiration Date (for 3rd party tugs)"
+    },
+    "uscg_coi_expiration": {
+      "type": "string",
+      "format": "date",
+      "description": "USCG COI (Certificate of Inspection) Expiration"
+    },
+    "uscg_cod_expiration": {
+      "type": "string",
+      "format": "date",
+      "description": "USCG COD (Certificate of Documentation) Expiration"
+    },
+    "carb_tier3_mandate": {
+      "type": "string",
+      "format": "date",
+      "description": "CARB Tier 3 Mandate Date (CA vessels)"
+    },
+    "carb_tier4_mandate": {
+      "type": "string",
+      "format": "date",
+      "description": "CARB Tier 4 Mandate Date (CA vessels)"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the tug"
+    }
+  },
+  "required": [
+    "name",
+    "market"
+  ]
+}

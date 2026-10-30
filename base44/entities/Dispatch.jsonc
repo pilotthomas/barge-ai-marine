@@ -1,0 +1,228 @@
+{
+  "name": "Dispatch",
+  "type": "object",
+  "properties": {
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "delivery",
+        "inspection",
+        "compliance",
+        "maintenance",
+        "crane_work",
+        "other_non_delivery"
+      ],
+      "default": "delivery",
+      "description": "Type of event - delivery (counts towards inventory/analytics) or non-delivery (calendar blocking only)"
+    },
+    "market": {
+      "type": "string",
+      "enum": [
+        "Long Beach",
+        "Oakland",
+        "Portland",
+        "Seattle",
+        "Wood River",
+        "St. Louis",
+        "Wickliffe",
+        "Memphis",
+        "Baton Rouge",
+        "Mobile"
+      ],
+      "description": "Operating market for this dispatch"
+    },
+    "barge_id": {
+      "type": "string",
+      "description": "ID of the assigned barge"
+    },
+    "barge_name": {
+      "type": "string",
+      "description": "Name of the barge for quick reference"
+    },
+    "tug_id": {
+      "type": "string",
+      "description": "ID of the assigned tug"
+    },
+    "tug_name": {
+      "type": "string",
+      "description": "Name of the tug for quick reference"
+    },
+    "is_third_party_towing": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether using third-party towing provider"
+    },
+    "is_outside_tow": {
+      "type": "boolean",
+      "default": false,
+      "description": "Delivery beyond breakwater / out to sea"
+    },
+    "is_dockside_delivery": {
+      "type": "boolean",
+      "default": false,
+      "description": "Customer alongside berth - pumping directly from barge"
+    },
+    "captain": {
+      "type": "string",
+      "description": "Captain name"
+    },
+    "deckhand": {
+      "type": "string",
+      "description": "Deckhand name"
+    },
+    "tankerman": {
+      "type": "string",
+      "description": "Tankerman name"
+    },
+    "crew_members": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Additional crew member names"
+    },
+    "vessel_name": {
+      "type": "string",
+      "description": "Vessel name (or description for non-delivery events)"
+    },
+    "destination": {
+      "type": "string",
+      "description": "Delivery destination (or location for non-delivery events)"
+    },
+    "cargo_type": {
+      "type": "string",
+      "description": "Primary product on this dispatch (first product line)"
+    },
+    "cargo_brand": {
+      "type": "string",
+      "description": "Brand of cargo (for lubricants)"
+    },
+    "gallons_delivered": {
+      "type": "number",
+      "description": "Total gallons delivered across all products"
+    },
+    "metric_tons_delivered": {
+      "type": "number",
+      "description": "Total metric tons delivered across all products"
+    },
+    "product_lines": {
+      "type": "array",
+      "description": "All products delivered on this dispatch",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_type": {
+            "type": "string",
+            "description": "Product name"
+          },
+          "cargo_brand": {
+            "type": "string",
+            "description": "Brand (for lubricants)"
+          },
+          "gallons": {
+            "type": "number",
+            "description": "Gallons for this product"
+          },
+          "metric_tons": {
+            "type": "number",
+            "description": "Metric tons for this product"
+          }
+        },
+        "required": [
+          "product_type"
+        ]
+      }
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Dispatch start date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Dispatch completion/end date"
+    },
+    "time_alongside": {
+      "type": "string",
+      "description": "Time alongside vessel (for demurrage tracking)"
+    },
+    "time_transfer_commenced": {
+      "type": "string",
+      "description": "Time cargo transfer commenced (for demurrage tracking)"
+    },
+    "time_transfer_completed": {
+      "type": "string",
+      "description": "Time cargo transfer completed (for demurrage tracking)"
+    },
+    "time_departed": {
+      "type": "string",
+      "description": "Time departed from vessel (for demurrage tracking)"
+    },
+    "requested_delivery_time": {
+      "type": "string",
+      "description": "Requested delivery time in 24-hour maritime format (e.g., 0900, 1430)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "scheduled",
+        "in_transit",
+        "delivered",
+        "cancelled"
+      ],
+      "default": "scheduled",
+      "description": "Current dispatch status"
+    },
+    "customer": {
+      "type": "string",
+      "description": "Customer name"
+    },
+    "agent_name": {
+      "type": "string",
+      "description": "Agent company name"
+    },
+    "agent_contact_name": {
+      "type": "string",
+      "description": "Agent contact person name"
+    },
+    "agent_phone": {
+      "type": "string",
+      "description": "Agent phone number"
+    },
+    "paperwork_sent_to_billing": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether paperwork has been sent to billing"
+    },
+    "sage_order_number": {
+      "type": "string",
+      "description": "Sage ERP order/delivery ticket number"
+    },
+    "entered_in_sage": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether order has been entered in Sage"
+    },
+    "dispatched_by_name": {
+      "type": "string",
+      "description": "Name of the user who dispatched this order"
+    },
+    "dispatched_by_email": {
+      "type": "string",
+      "description": "Email of the user who dispatched this order"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional dispatch notes"
+    }
+  },
+  "required": [
+    "market",
+    "barge_id",
+    "barge_name",
+    "vessel_name",
+    "destination",
+    "start_date"
+  ]
+}

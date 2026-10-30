@@ -1,0 +1,44 @@
+{
+  "name": "Tug",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Tug boat name"
+    },
+    "market": {
+      "type": "string",
+      "enum": [
+        "Long Beach",
+        "Oakland",
+        "Portland",
+        "Seattle"
+      ],
+      "description": "Operating market location"
+    },
+    "is_third_party": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether this is a third-party towing provider"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "available",
+        "assigned",
+        "maintenance",
+        "retired"
+      ],
+      "default": "available",
+      "description": "Current tug status"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the tug"
+    }
+  },
+  "required": [
+    "name",
+    "market"
+  ]
+}

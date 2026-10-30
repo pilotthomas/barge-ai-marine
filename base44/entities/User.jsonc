@@ -1,0 +1,66 @@
+{
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "position": {
+      "type": "string",
+      "enum": [
+        "dispatch",
+        "management",
+        "billing",
+        "supply_chain",
+        "vessel_crew",
+        "drivers",
+        "sales"
+      ],
+      "description": "User's role/position in the company"
+    },
+    "market": {
+      "type": "string",
+      "enum": [
+        "Long Beach",
+        "Oakland",
+        "Portland",
+        "Seattle"
+      ],
+      "description": "Primary operating market for this user"
+    },
+    "default_market": {
+      "type": "string",
+      "enum": [
+        "Long Beach",
+        "Oakland",
+        "Portland",
+        "Seattle",
+        "Richmond CA",
+        "Rancho Dominguez"
+      ],
+      "description": "Default market filter for dispatch and calendar views"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Contact phone number"
+    },
+    "allowed_pages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of pages this user can access",
+      "default": [
+        "Dashboard"
+      ]
+    },
+    "region": {
+      "type": "string",
+      "enum": [
+        "PNW",
+        "California",
+        "Marine East",
+        "all"
+      ],
+      "description": "Operating region the user works in; scopes all data views. 'all' is admin-only."
+    }
+  },
+  "required": []
+}

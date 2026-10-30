@@ -1,0 +1,51 @@
+{
+  "name": "Trailer",
+  "type": "object",
+  "properties": {
+    "trailer_number": {
+      "type": "string",
+      "description": "Trailer identifier/number"
+    },
+    "market": {
+      "type": "string",
+      "enum": [
+        "Richmond CA",
+        "Rancho Dominguez",
+        "Seattle"
+      ],
+      "description": "Operating market location"
+    },
+    "trailer_type": {
+      "type": "string",
+      "enum": [
+        "Box Van",
+        "Tank",
+        "Pup Tank"
+      ],
+      "description": "Type of trailer"
+    },
+    "capacity_gallons": {
+      "type": "number",
+      "description": "Maximum capacity in gallons"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "available",
+        "dispatched",
+        "maintenance",
+        "retired"
+      ],
+      "default": "available",
+      "description": "Current trailer status"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the trailer"
+    }
+  },
+  "required": [
+    "trailer_number",
+    "market"
+  ]
+}

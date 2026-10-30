@@ -1,0 +1,57 @@
+{
+  "name": "BargeTransfer",
+  "type": "object",
+  "properties": {
+    "transfer_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of transfer"
+    },
+    "from_barge_id": {
+      "type": "string",
+      "description": "Source barge ID"
+    },
+    "from_barge_name": {
+      "type": "string",
+      "description": "Source barge name"
+    },
+    "to_barge_id": {
+      "type": "string",
+      "description": "Destination barge ID"
+    },
+    "to_barge_name": {
+      "type": "string",
+      "description": "Destination barge name"
+    },
+    "product_type": {
+      "type": "string",
+      "description": "Product transferred from source"
+    },
+    "resulting_product_type": {
+      "type": "string",
+      "description": "Resulting product type after blend/transfer (if different from source)"
+    },
+    "is_blend": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether this transfer involves blending products"
+    },
+    "gallons_transferred": {
+      "type": "number",
+      "description": "Gallons transferred"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Transfer notes"
+    }
+  },
+  "required": [
+    "transfer_date",
+    "from_barge_id",
+    "from_barge_name",
+    "to_barge_id",
+    "to_barge_name",
+    "product_type",
+    "gallons_transferred"
+  ]
+}

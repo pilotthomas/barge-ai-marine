@@ -1,0 +1,27 @@
+{
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "phone": {
+      "type": "string",
+      "description": "Contact phone number"
+    },
+    "position": {
+      "type": "string",
+      "enum": [
+        "captain",
+        "deckhand",
+        "engineer",
+        "sales",
+        "dispatcher",
+        "admin"
+      ],
+      "description": "Role/position in the company"
+    },
+    "is_available": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether crew member is available for dispatch"
+    }
+  }
+}
